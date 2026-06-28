@@ -13,6 +13,7 @@ safetensors
 
 langdetect
 emoji
+nltk
 PyYAML
 regex
 tqdm
