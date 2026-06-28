@@ -126,20 +126,14 @@ def _load_spacy_model(
     model_name: str = "en_core_web_sm",
 ) -> spacy.language.Language:
     """
-    Load (or auto-download) a spaCy language model with NER and the
-    dependency parser disabled for speed.
-
-    :param model_name: spaCy model identifier, e.g. ``en_core_web_sm``.
-    :type model_name: str
-    :returns: Ready-to-use spaCy language pipeline.
-    :rtype: spacy.language.Language
+    Load the spaCy model if available. On cloud deployment, fall back to a
+    blank English pipeline instead of trying to download/install the model.
     """
     try:
         return spacy.load(model_name, disable=["ner", "parser"])
     except OSError:
-        print(f"Model '{model_name}' not found. Downloading…")
-        spacy.cli.download(model_name)  # type: ignore
-        return spacy.load(model_name, disable=["ner", "parser"])
+        print(f"Model '{model_name}' not found. Falling back to spacy.blank('en').")
+        return spacy.blank("en")
 
 
 class Cleaning:
