@@ -15,7 +15,7 @@ paths:
   data: french_cleaned.csv
   checkpoints: checkpoints
   results: results/
-  tfidf_vectorizer: vectorizers\tfidf_vectorizer.pkl
+  tfidf_vectorizer: vectorizers/tfidf_vectorizer.pkl
   cam_train_emb: vectorizers/X_train_cam.npy
   cam_test_emb: vectorizers/X_test_cam.npy
 dataset:
