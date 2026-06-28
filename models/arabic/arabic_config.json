@@ -1,0 +1,36 @@
+{
+  "model_name": "Arabic TF-IDF + Logistic Regression",
+  "text_column": "analysis_text",
+  "label_column": "umbrella",
+  "retained_labels": [
+    "anxiety_fear",
+    "depression",
+    "ocd_obsessive"
+  ],
+  "vectorizer": {
+    "type": "TfidfVectorizer",
+    "analyzer": "word",
+    "ngram_range": [
+      1,
+      2
+    ],
+    "min_df": 3,
+    "max_df": 0.98,
+    "max_features": 30000,
+    "norm": "l2"
+  },
+  "classifier": "LogisticRegression",
+  "best_params": {
+    "C": 1.0,
+    "class_weight": "balanced",
+    "penalty": "l2",
+    "solver": "liblinear"
+  },
+  "classes": [
+    "anxiety_fear",
+    "depression",
+    "ocd_obsessive"
+  ],
+  "test_accuracy": 0.718475073313783,
+  "test_macro_f1": 0.719250678530828
+}

@@ -1,0 +1,38 @@
+WINDOWS QUICK START
+
+1. Extract this zip. Do not run it from inside the zip preview.
+
+2. Copy the English model files into:
+   models/english/
+
+   Required English files:
+   - svm_distilbert.pkl
+   - vectorizers.py
+   - cleaning.py
+   - config.py
+   - ml folder containing at least __init__.py and svm.py
+
+3. Open the main project config.py:
+   config.py
+
+   Change:
+   DEMO_MODE = True
+
+   to:
+   DEMO_MODE = False
+
+   Important:
+   Do NOT change models/english/config.py.
+
+4. Double click:
+   INSTALL_WINDOWS.bat
+
+5. Double click:
+   RUN_APP_WINDOWS.bat
+
+NOTE:
+If PowerShell says "streamlit is not recognized", that is okay.
+Use:
+   python -m streamlit run app.py
+
+The RUN_APP_WINDOWS.bat file already uses this correct command.
